@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday My Girl 💖🎂</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comfortaa:wght@400;600;700&family=Nunito:wght@400;600;700;800&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ══════════════ GLOBAL LAYERS ══════════════ -->
+<div id="global-hearts"></div>
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 1 — COUNTDOWN
+════════════════════════════════════════════ -->
+<section id="s1" class="screen active">
+  <div class="bokeh-layer">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="stars-layer" id="stars-layer"></div>
+  <div class="glass-card cd-card">
+    <p class="cd-label">Something magical is coming...</p>
+    <div class="cd-number" id="cd-number">3</div>
+    <p class="cd-sub">Get ready ✨</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 2 — LOADING SURPRISE
+════════════════════════════════════════════ -->
+<section id="s2" class="screen">
+  <div class="load-bg-orbs">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="loading-wrap">
+    <div class="kitten-bounce-wrap">
+      <div class="kitten-emoji">🐱</div>
+      <div class="orbit-hearts">
+        <span style="--i:0">💗</span>
+        <span style="--i:1">💕</span>
+        <span style="--i:2">💖</span>
+        <span style="--i:3">💓</span>
+        <span style="--i:4">💝</span>
+      </div>
+    </div>
+      
+    </div>
+   <br>
+    <p class="load-txt">🐾 Loading your surprise<span class="dot-trail"><b>.</b><b>.</b><b>.</b></span></p>
+    <br>
+    <div class="load-bar-wrap">
+      <div class="load-bar-fill" id="load-bar"></div>
+    </div>
+    <br>
+    <p class="load-hint">✨ Something beautiful is being prepared for you ✨</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 3 — START SURPRISE
+════════════════════════════════════════════ -->
+<section id="s3" class="screen">
+  <div class="bokeh-layer">
+    <i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="intro-center">
+    <div class="intro-kitty-wrap">
+      <div class="intro-kitty">🐈</div>
+      <div class="paw-trail">🐾 🐾 🐾</div>
+    </div>
+    <h1 class="intro-h1">Happy Birthday!</h1>
+    <h2 class="intro-h2">🎀 My girl was born 20 years ago today 🎂</h2>
+    <p class="intro-p">Something magical is waiting for you...</p>
+    <button class="pill-btn shimmer-btn" id="start-btn">
+      <span class="btn-ico">🎁</span>
+      Start The Surprise
+      <span class="btn-sparkle-r">✦</span>
+    </button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 4 — BIRTHDAY CELEBRATION (no swipe)
+════════════════════════════════════════════ -->
+<section id="s4" class="screen">
+  <!-- Dark starfield bg -->
+  <div class="hbd-starfield" id="hbd-starfield"></div>
+
+  <div class="hbd-wrap">
+    <!-- Title -->
+    <h1 class="hbd-title" id="hbd-title">🎉 Happy Birthday My Girl! 🎉</h1>
+
+    <!-- Cake scene -->
+    <div class="cake-scene-new" id="cake-scene-new">
+      <div class="cake-candles">
+        <span class="cndl" style="--d:.1s">🕯️</span>
+        <span class="cndl" style="--d:.2s">🕯️</span>
+        <span class="cndl" style="--d:.0s">🕯️</span>
+      </div>
+      <div class="cake-emoji-big" id="cake-emoji-big">🎂</div>
+      <div class="cake-glow-ring"></div>
+    </div>
+
+    <!-- Blow button -->
+    <button class="pill-btn blow-btn" id="blow-btn">
+      💨 Blow The Candles!
+    </button>
+
+    <!-- Poppers row -->
+    <div class="poppers-row" id="poppers-row" style="display:none">
+      <span class="popper" style="--d:0.1s">🎊</span>
+      <span class="popper" style="--d:0.2s">🎉</span>
+      <span class="popper" style="--d:0.3s">✨</span>
+      <span class="popper" style="--d:0.2s">🎊</span>
+      <span class="popper" style="--d:0.1s">🎉</span>
+    </div>
+
+    <!-- Floating balloons -->
+    <div class="balloons-field" id="balloons-field">
+      <div class="balloon-item" style="--l:8%;--d:0.2s">🎈</div>
+      <div class="balloon-item" style="--l:22%;--d:0.7s">🎈</div>
+      <div class="balloon-item" style="--l:45%;--d:0.4s">🎊</div>
+      <div class="balloon-item" style="--l:68%;--d:0.9s">🎈</div>
+      <div class="balloon-item" style="--l:82%;--d:0.1s">🎊</div>
+    </div>
+
+    <button class="pill-btn next-btn" id="s4-next" style="display:none">
+      Next ➡️
+    </button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 5 — SWEET MEMORIES GALLERY
+════════════════════════════════════════════ -->
+<section id="s5" class="screen">
+  <div class="gallery-bg-blur"></div>
+  <div class="gallery-page">
+    <h2 class="gallery-title">✨ Some Sweet Memories Of Our Life ✨</h2>
+
+    <div class="film-strip-wrap">
+      <button class="film-arrow left" id="gal-prev">❮</button>
+      <div class="film-viewport">
+        <div class="film-track" id="film-track">
+
+          <div class="film-card">
+            <div class="film-photo fp1"><span class="fp-ico">📸</span><span class="fp-lbl">Add Photo</span></div>
+            <p class="film-cap">💕 Our first memory together</p>
+          </div>
+
+          <div class="film-card">
+            <div class="film-photo fp2"><span class="fp-ico">🌸</span><span class="fp-lbl">Add Photo</span></div>
+            <p class="film-cap">🌸 When we laughed so hard</p>
+          </div>
+
+          <div class="film-card">
+            <div class="film-photo fp3"><span class="fp-ico">🌈</span><span class="fp-lbl">Add Photo</span></div>
+            <p class="film-cap">🌈 The best adventure yet</p>
+          </div>
+
+          <div class="film-card">
+            <div class="film-photo fp4"><span class="fp-ico">✨</span><span class="fp-lbl">Add Photo</span></div>
+            <p class="film-cap">✨ A moment I'll never forget</p>
+          </div>
+
+          <div class="film-card">
+            <div class="film-photo fp5"><span class="fp-ico">💖</span><span class="fp-lbl">Add Photo</span></div>
+            <p class="film-cap">💖 Always smiling with you</p>
+          </div>
+
+          <div class="film-card">
+            <div class="film-photo fp6"><span class="fp-ico">🎀</span><span class="fp-lbl">Add Photo</span></div>
+            <p class="film-cap">🎀 Every day better with you</p>
+          </div>
+
+        </div>
+      </div>
+      <button class="film-arrow right" id="gal-next">❯</button>
+    </div>
+
+    <div class="film-dots" id="film-dots"></div>
+    <button class="pill-btn" id="s5-next">💝 Next Surprise</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 6 — ENVELOPE
+════════════════════════════════════════════ -->
+<section id="s6" class="screen">
+  <div class="bokeh-layer">
+    <i></i><i></i><i></i><i></i>
+  </div>
+  <div class="env-page">
+    <h2 class="env-h2">A  little something from the heart 💌</h2>
+    <p class="env-sub">Your special message is sealed inside...</p>
+
+    <div class="env-wrap3d" id="env-wrap3d">
+      <!-- Back panel -->
+      <div class="env-back"></div>
+      <!-- Flap -->
+      <div class="env-flap" id="env-flap">
+        <div class="env-flap-inner"></div>
+      </div>
+      <!-- Front body -->
+      <div class="env-body">
+        <div class="env-v-left"></div>
+        <div class="env-v-right"></div>
+        <div class="env-seal-circle" id="env-seal">
+          <span>💌</span>
+        </div>
+      </div>
+      <!-- Letter rising out -->
+      <div class="letter-rise" id="letter-rise">💌</div>
+    </div>
+
+    <button class="pill-btn shimmer-btn" id="open-env-btn">
+      💌 Open My Message For You
+    </button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 7 — LOVE LETTER  (letter + side images)
+════════════════════════════════════════════ -->
+<section id="s7" class="screen">
+  <div class="letter-scene">
+
+    <!-- Floating hearts bg -->
+    <div class="letter-hearts-bg" id="letter-hearts-bg"></div>
+
+    <!-- ── Left: letter paper ── -->
+    <div class="letter-col-left">
+      <div class="letter-paper" id="letter-paper">
+        <div class="lp-corner tl">🌸</div>
+        <div class="lp-corner tr">✨</div>
+        <div class="lp-corner bl">✨</div>
+        <div class="lp-corner br">🌸</div>
+
+        <p class="lp-to">To My Favorite Person ❤️</p>
+        <div class="lp-rule">~ ~ ~</div>
+        <div class="lp-body" id="lp-body"></div>
+        <div class="lp-rule">~ ~ ~</div>
+        <p class="lp-sign">With lots of love,</p>
+        <p class="lp-name">Your Person 🌸</p>
+      </div>
+      <p class="letter-love-txt">With Love ❤️</p>
+      <button class="pill-btn" id="s7-next">🤗 See Your Virtual Hug</button>
+    </div>
+
+    <!-- ── Right: image strip ── -->
+    <div class="letter-col-right">
+      <div class="side-img-strip" id="side-img-strip">
+
+        <div class="side-img-card sic1">
+          <div class="sic-photo sip1"><span>📸</span><small>Add Photo</small></div>
+        </div>
+        <div class="side-img-card sic2">
+          <div class="sic-photo sip2"><span>🌸</span><small>Add Photo</small></div>
+        </div>
+        <div class="side-img-card sic3">
+          <div class="sic-photo sip3"><span>💖</span><small>Add Photo</small></div>
+        </div>
+        <div class="side-img-card sic4">
+          <div class="sic-photo sip4"><span>✨</span><small>Add Photo</small></div>
+        </div>
+        <div class="side-img-card sic5">
+          <div class="sic-photo sip5"><span>🌈</span><small>Add Photo</small></div>
+        </div>
+        <div class="side-img-card sic6">
+          <div class="sic-photo sip6"><span>🎀</span><small>Add Photo</small></div>
+        </div>
+        <div class="side-img-card sic7">
+          <div class="sic-photo sip7"><span>💕</span><small>Add Photo</small></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SCREEN 8 — VIRTUAL HUG (GIF slot)
+════════════════════════════════════════════ -->
+<section id="s8" class="screen">
+  <div class="hug-glow-bg"></div>
+
+  <!-- Floating hearts -->
+  <div class="hug-hearts-bg" id="hug-hearts-bg"></div>
+
+  <!-- Sparkle particles -->
+  <div class="hug-sparkles" id="hug-sparkles"></div>
+
+  <div class="hug-main" id="hug-main">
+
+    <!-- GIF area — just drop your hug GIF file as "hug.gif" next to index.html -->
+    <div class="gif-wrap" id="gif-wrap">
+      <img src="hug.gif" alt="Virtual Hug" class="hug-gif" id="hug-gif"
+           onerror="this.parentElement.classList.add('gif-missing')"/>
+      <!-- Fallback shown when gif is missing -->
+      <div class="gif-fallback">
+        <div class="bear-big">🧸</div>
+        <div class="arms-wrap" id="arms-wrap">🤗</div>
+      </div>
+    </div>
+
+    <h1 class="hug-h1">🤗 Virtual Hug For You, My Girl ❤️</h1>
+    <p class="hug-p1">You are always safe in my heart 💖</p>
+    <p class="hug-p2">No matter how far, this hug is always yours 🤍</p>
+
+    <button class="pill-btn hug-send-btn shimmer-btn" id="send-hug-btn">
+      💞 Send Virtual Hug
+    </button>
+
+    <!-- Heart burst container -->
+    <div class="hug-burst-ring" id="hug-burst-ring"></div>
+
+    <div class="thank-you-msg" id="thank-you-msg">
+      Thank you for being my happiness 💕
+    </div>
+  </div>
+
+  <!-- Final veil -->
+  <div class="final-veil" id="final-veil">
+    <div class="sparkle-ring" id="sparkle-ring"></div>
+    <p class="final-text">💗 The End…<br>but my care for you never ends 💗</p>
+    <button class="pill-btn small-btn" id="restart-btn">🔄 Relive The Magic</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
